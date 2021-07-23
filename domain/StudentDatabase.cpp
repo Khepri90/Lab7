@@ -104,9 +104,12 @@ void StudentDatabase::displayTranscript() {
      * Display the transcript. (help on formatting is below.)
      */
 
+
+
     //YOUR CODE HERE
 
-    /* FORMATTING
+    vector<shared_ptr<Transcript>>transcript = this->transcripts.toVector();
+    for(int i = 0; i < transcripts.getCurrentSize(); i++) {
         cout << left <<
              setw(10) << transcript[i]->getTranscriptId() << " -- " <<
              setw(10)<< transcript[i]->getStudentId() << " -- " <<

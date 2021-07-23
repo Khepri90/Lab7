@@ -10,8 +10,10 @@
 ### **Lab Status**
 ```text
 Describe **briefly** how complete your lab is, and how did you tested it.
+Our lab seems to run properly. We ran into issues with displaying the transcripts etc but located the errors in
+the for loops and pointer references.
 Does it work on CSEGrid?
-```
+Yes.
 
 -----
 
