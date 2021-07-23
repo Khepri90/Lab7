@@ -74,15 +74,17 @@ void StudentDatabase::displayRecords() {
 
     //YOUR CODE HERE
 
-    /* FORMATTING
-     cout<<left <<
-        setw(10) << transcript Id << " -- " <<
-        setw(10) << StudentId << " -- " <<
-        setw(10) << CourseId << " -- " <<
-        setw(15) << Grade << endl;
-    */
+    vector<shared_ptr<Transcript>>transcript = this->transcripts.toVector();
+    for(int i = 0; i < transcripts.getCurrentSize(); i++) {
+        cout << left <<
+             setw(10) << transcript[i]->getTranscriptId() << " -- " <<
+             setw(10) << transcript[i]->getStudentId() << " -- " <<
+             setw(10) << transcript[i]->getCourseId() << " -- " <<
+             setw(15) << transcript[i]->getGrade() << endl;
 
-     cout << string(57, '=') << endl;
+
+        cout << string(57, '=') << endl;
+    }
 }
 
 /****************************************************************************************************************/
@@ -106,12 +108,15 @@ void StudentDatabase::displayTranscript() {
 
     /* FORMATTING
         cout << left <<
-             setw(10) <<  Transcript Id << " -- " <<
-             setw(10) <<  Student Id << " -- " << setw(20) << student name << " -- " <<
-             setw(10) <<  Course Id << " -- " << setw(30) << Course Description << " -- " <<
-             setw(15) <<  Grade << endl;
-    */
-    cout << string(115, '=') << endl;
+             setw(10) << transcript[i]->getTranscriptId() << " -- " <<
+             setw(10)<< transcript[i]->getStudentId() << " -- " <<
+             setw(20) <<  students.getItem(transcript[i]->getStudentId())->getName()<< " -- " <<
+             setw(10) << transcript[i]->getCourseId() << " -- " <<
+             setw(30) << courses.getItem(transcript[i]->getCourseId())->getDescription() << " -- " <<
+             setw(15) << transcript[i]->getGrade() << endl;
+
+        cout << string(115, '=') << endl;
+    }
 }
 
 
